@@ -1,29 +1,54 @@
 {
-  "name": "node-js-sample",
-  "version": "0.2.0",
+  "name": "node-sample",
+  "version": "0.0.0-development",
   "description": "A sample Node.js app using Express 4",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "commit": "git-cz",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+    "registry-url": "^5.1.0"
   },
   "engines": {
     "node": "4.0.0"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-sample"
+    "url": "https://github.com/nimmoadam/node-sample"
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
-  "author": "Mark Pundsack",
+  "author": "NK",
   "contributors": [
     "Zeke Sikelianos <zeke@sikelianos.com> (http://zeke.sikelianos.com)"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@commitlint/cli": "^7.6.1",
+    "@commitlint/config-conventional": "^7.6.0",
+    "@commitlint/prompt": "^7.6.1",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/github": "^5.2.10",
+    "commitizen": "^3.1.1",
+    "git-cz": "^3.0.1",
+    "husky": "^2.3.0",
+    "semantic-release": "^15.13.12"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  }
 }
