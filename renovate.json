@@ -7,7 +7,6 @@
     "automerge": false
   },
   "timezone": "Europe/Berlin",
-  "schedule": "before 5am every weekday",
   "prBodyColumns": ["Package", "Update", "Type", "Change", "Sourcegraph"],
   "ignorePaths": [
     "**/nk/**",
