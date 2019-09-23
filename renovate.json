@@ -1,5 +1,37 @@
 {
-  "assignees": ["nimmoadam"],
+  "extends": ["config:base"],
+  "reviewers": ["nimmoadam"],
   "baseBranches": ["master"],
-  "extends": ["config:base"]
+  "automerge": true,
+  "major": {
+    "automerge": false
+  },
+  "timezone": "Europe/Berlin",
+  "schedule": "before 5am every weekday",
+  "prBodyColumns": ["Package", "Update", "Type", "Change", "Sourcegraph"],
+  "ignorePaths": [
+    "**/nk/**",
+    "themes/**",
+    "ext/**",
+    "lib/**",
+    "**/__tests__/**",
+    "**/test/**",
+    "**/tests/**"
+  ],
+  "ignoreDeps": ["eslint"],
+  "rollbackPrs": true,
+  "packageRules": [
+    {
+    "packagePatterns": ["^@semantic-release"],
+    "groupName": "semantic-release packages"
+    },
+    {
+      "packageNames": ["git-cz"],
+      "schedule": ["after 9pm on sunday"]
+    },
+    {
+    "packageNames": ["husky"],
+    "assignees": ["nimmoadam"]
+    }
+  ]
 }
